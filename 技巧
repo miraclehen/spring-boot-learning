@@ -1,0 +1,10 @@
+idea遇到“Failure to transfer…”错误。
+依赖包的错误，先移除本地所有依赖，重新导入即可。命令行如下。
+mac：
+find ~/.m2  -name "*.lastUpdated" -exec grep -q "Could not transfer" {} \; -print -exec rm {} \;
+window：
+cd %userprofile%\.m2\repository
+for /r %i in (*.lastUpdated) do del %i
+
+
+
